@@ -1,14 +1,22 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %} {% block content %}
+<div class="mt-10 flex justify-center">
+  <div class="border-2 border-white border-solid p-10">
+    {% for name, email in users %}
+    <div class="mb-2">
+      <div><strong>Name:</strong> {{ name }}</div>
+      <div><strong>Email:</strong> {{ email }}</div>
 
-{% block content %}
-  <div class="mt-10 flex justify-center">
-    <div class="border-2 border-white border-solid p-10">
-      {% for name, email in users %}
-      <div class="mb-2">
-        <div><strong>Name:</strong> {{ name }}</div>
-        <div><strong>Email:</strong> {{ email }}</div>
-      </div>
-      {%endfor%}
+      <form action="/delete" method="post">
+        <input type="hidden" name="email" value="{{ email }}" />
+        <button
+          type="submit"
+          class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded"
+        >
+          Delete
+        </button>
+      </form>
     </div>
+    {%endfor%}
   </div>
+</div>
 {% endblock %}
