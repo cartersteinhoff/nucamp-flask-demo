@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+  <div class="mt-10 flex justify-center">
+    <div class="border-2 border-white border-solid p-10">
+      {% for name, email in users %}
+      <div class="mb-2">
+        <div><strong>Name:</strong> {{ name }}</div>
+        <div><strong>Email:</strong> {{ email }}</div>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+{% endblock %}

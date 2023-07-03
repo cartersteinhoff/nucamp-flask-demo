@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black text-white">
+    <header>
+      <!-- Define your header component here -->
+      <div class="flex justify-center">
+        <div>
+          <h1 class="text-5xl mt-5">Users Database</h1>
+          <nav>
+            <ul class="flex cursor-pointer mt-2">
+              <li class="mr-2"><a href="/">Home</a></li>
+              <li><a href="/newuser">Create User</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- Add your common footer elements here -->
+  </body>
+</html>
